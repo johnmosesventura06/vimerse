@@ -1,0 +1,41 @@
+.Navbar-font {
+  background-color: #ffffff;
+  height: 60px;
+}
+.header-item {
+  position: absolute;
+  right: 100px;
+  align-items: center;
+}
+.header-item a {
+  color: #434f56 !important;
+  text-decoration: none;
+  padding: 0px 20px;
+
+}
+.header-item a:hover {
+  color: #176ea5 !important;
+}
+.header-btn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: #fe7a39;
+  border-radius: 100px;
+  padding: 0px 30px !important;
+  height: 34px;
+  margin-left: 50px;
+  text-align: center;
+  color: #ffffff !important;
+}
+.header-item a:last-child {
+  color: #fff !important;
+}
+
+/*  Responsive-NavBar */
+.mobile-responsive {
+  background: #ffffff;
+}

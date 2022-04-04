@@ -1,0 +1,74 @@
+.article-heading{
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 72px;
+    text-align: center;
+    color: #38424D;
+    padding: 100px 0px ;
+}
+.card-box{
+    padding:0px 25px 0px 25px;
+    background: #ffffff;
+    border-radius: 0px 0px 22px 22px;
+}
+.cardx1{
+    height: 100%;
+    border-radius: 22px !important;
+}
+.cardx1 video{
+    border-radius: 16px;
+}
+.card-box h4{
+    font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+color: #38424D;
+}
+.paddingforx4{
+    padding: 0px 0px 26px 0px !important;
+}
+.card-box p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #38424D;
+}
+.read-or-hide{
+    color: rgb(192,192,192);
+    cursor: pointer;
+  }
+  .pd-bottom{
+      padding-bottom: 60px;
+  }
+  .read-or-hide{
+    color: #176EA5;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    float: right;
+    display: block;
+  }
+
+
+  /* Article View CSS */
+.parent-view{
+    padding-top: 30px;
+}
+  .parent-view h1{
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 72px;
+    text-align: center;
+    padding: 0px 145px;
+    color: #38424D;
+  }
+  .parent-view p{
+    font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+color: #38424D;
+padding: 0px 122px;
+word-spacing: 3px;
+text-align: left;
+  }
+

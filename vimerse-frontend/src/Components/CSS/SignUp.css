@@ -1,0 +1,378 @@
+@import url( "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.main-container {
+  padding: 80px 100px !important;
+}
+* {
+  font-family: "Inter", sans-serif !important;
+font-style: normal;
+}
+.bg-color-Signin{
+  background-color: #FFFFFF;
+  border-radius: 16px 0px 0px 16px;
+}
+.main-container-row {
+  border-radius: 16px;
+  box-shadow: 2px 5px 20px rgba(191, 191, 191, 0.25);
+}
+.main-container .row:nth-child(2) {
+  padding: 12px 0px !important;
+}
+.main-container .row:nth-child(4) {
+  margin-top: 80px !important;
+}
+.main-container .hl-text.pd-0{
+  padding-bottom: 0!important;
+}
+h2 {
+  font-weight: 600 !important;
+}
+.hl-text p:first-child {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #9da4a9;
+  padding: 0px 62px 0px 0px !important;
+}
+.hl-text p:nth-child(2) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #9da4a9;
+}
+.hl-text span:first-child {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  float: right;
+  color: #9da4a9;
+}
+.hl-text span:nth-child(2) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  float: right;
+  color: #9da4a9;
+}
+.form p span {
+  text-align: end;
+}
+.App {
+  padding: 40px 38px !important;
+}
+.ft-content {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #434f56 !important;
+  padding: 25px 46px 0px 46px !important;
+}
+.ft-content a {
+  color: #434f56 !important;
+}
+.App h2 {
+  text-align: center;
+}
+
+.form Label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #121213;
+  display: flex !important;
+  margin: 0px !important;
+}
+.App hr {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #6789ac;
+  border: none;
+  overflow: visible;
+  opacity: unset !important;
+  background-color: #121213 !important;
+}
+.form .row:last-child .text-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 7px !important;
+}
+
+.btn-orange {
+  border-radius: 30px !important ;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  padding: 12px 70px !important;
+  background-color: #fe7a39 !important;
+  border: 1px solid #fe7a39 !important;
+  color: #FFFFFF !important ;
+  text-decoration: none;
+}
+.App hr:after {
+  content: "Or sign up with email";
+  background-color: #fff !important;
+  color: #121213 !important;
+  padding: 0 4px;
+  position: relative;
+  top: -9px;
+}
+.badge {
+  background-color: #fff2eb !important;
+  border: #fff2eb !important;
+  border-radius: 100px !important;
+  padding: 10px 60px !important;
+  color: #fe7a39 !important;
+  box-shadow: none !important;
+}
+.Side-img {
+  padding: 0px !important;
+}
+
+/* <--Mobile Responsive--> */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .main-container {
+    padding: 14px 30px !important;
+  }
+  /* .main-container .row:first-child {
+    border-radius: 16px;
+    box-shadow: 2px 5px 20px rgb(191 191 191 / 25%);
+  } */
+  .App {
+    padding: 20px 18px !important;
+  }
+  .ft-content {
+    padding: 13px 54px 0px 54px !important;
+  }
+  .Side-img {
+    display: none;
+  }
+ 
+}
+/* <--Sign-in Css--> */
+
+.forget-p a {
+  color: #fe7a39;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+.forget-p a:hover{
+  color: #fe7a39;
+}
+
+/* form css */
+.form label {
+  font-family: "Inter";
+  padding: 0px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #121213;
+  display: flex !important;
+  margin: 0px !important;
+}
+input {
+  border-radius: 0px !important;
+}
+.mp {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.mail-lock {
+  border: 0.5px solid #ced4da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #9bb0be;
+  background-color: #f6f7f9;
+}
+.b-right {
+  border-right: 0px !important;
+}
+.form-control {
+  color: #b3c2cb;
+}
+.hr-line:after {
+  content: "Or sign in with email";
+  background: #fff;
+  padding: 0 4px;
+  position: relative;
+  top: -9px;
+}
+.form-control:focus{
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+  color: unset !important;
+  transition: none !important;
+}
+Button:focus {
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+}
+.eye {
+  border-right: 1px solid #ced4da;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  color: #9bb0be;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.eye2 {
+  color: #9bb0be !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 23px;
+}
+
+/* <--Recover Password CSS --> */
+.m-container {
+  padding: 60px 100px !important;
+}
+.m-row {
+  border-radius: 16px;
+  box-shadow: 2px 5px 20px rgba(191, 191, 191, 0.25);
+}
+.col-pd {
+  padding: 40px 38px !important;
+}
+.col-pd h1{
+font-weight: 500;
+font-size: 32px;
+line-height: 40px;
+text-align: center;
+color: #38424D;
+margin-top: 25px;
+}
+.col-pd p{
+  font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+text-align: center;
+display: block;
+color: #434F56;
+padding: 1px 33px !important;
+margin-top: 15px !important;
+}
+.f-row{
+  padding: 0px 35px !important;
+}
+.fm-row{
+  padding: 5px 25px !important;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .m-container {
+    padding: 14px 30px !important;
+  }
+  /* .main-container .row:first-child {
+    border-radius: 16px;
+    box-shadow: 2px 5px 20px rgb(191 191 191 / 25%);
+  } */
+  .m-row {
+    padding: 20px 3px !important;
+  }
+ .col-pd{
+   padding: 1px 2px !important;
+ }
+ .col-pd h1{
+   display: grid;
+ }
+  .Side-img {
+    display: none;
+  }
+}
+/* Success Page */
+.success-class{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column;
+  padding: 50px 106px !important;
+  border-radius:  16px 0px 0px 16px;
+background-color: #FFFFFF;
+}
+.success-class h3{
+  font-weight: 600;
+font-size: 48px;
+line-height: 50px;
+text-align: center;
+color: #434F56;
+
+}
+.success-class p{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+text-align: center;
+color: #434F56;
+padding: 5px 0px !important;
+}
+.success-class p:last-child{
+  font-weight: 400;
+font-size: 12px !important;
+line-height: 18px;
+text-align: center;
+color: #434F56;
+padding: 40px 0px 0px 0px !important;
+}
+.success-class button{
+  background: #E1E1E1;
+border-radius: 84px;
+font-weight: 700;
+font-size: 16px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+padding: 10px 20px!important;
+}
+
+@media only screen and (max-width: 768px) {
+  .success-class{
+    border-radius: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 48px 15px !important;
+  }
+  .success-class p{
+    font-size: 19px !important;
+  }
+ 
+}
+

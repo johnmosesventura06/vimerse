@@ -1,0 +1,12 @@
+node_modules
+coverage
+.vscode
+.git
+.dockerignore
+Dockerfile
+.eslintrc
+.prettierrc
+package-lock.json
+**/test
+**/__test__
+**/__mocks__

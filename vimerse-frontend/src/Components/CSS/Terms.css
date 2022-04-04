@@ -1,0 +1,140 @@
+.heading-term {
+  margin-top: 40px;
+}
+.heading-term h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 72px;
+  padding: 100px 0px 10px;
+  text-align: center;
+  color: #38424d;
+}
+.heading-term p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  padding: 20px 89px;
+  word-spacing: 5px;
+  display: flex;
+  flex-flow: column;
+  text-align: start;
+  color: #38424d;
+}
+.terms-list ul li {
+  padding: 15px 0px;
+}
+.terms-list ul {
+  list-style: none;
+  padding: 0px 89px;
+}
+.terms-list ul li h5 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #38424d;
+}
+.terms-list ul li p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #38424d;
+}
+.heading-term span {
+  padding-top: 10px;
+}
+.contracT {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  padding: 15px 89px;
+
+  color: #38424d;
+}
+.terms-contract ul {
+  list-style: none;
+  padding: 0px 89px;
+}
+.terms-contract ul li{
+  padding: 15px 0px;
+
+}
+.terms-contract ul li h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px; 
+    color: #38424D;
+    padding-bottom: 15px !important;
+}
+.terms-contract ul li p{
+    font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+color: #38424D;
+
+}
+.your-account{
+    font-weight: 500 !important;
+font-size: 32px !important;
+line-height: 40px !important;
+color: #38424D !important;
+padding-bottom: 20px !important;
+
+}
+.min-title{
+    font-weight: 500 !important;
+font-size: 20px !important;
+line-height: 28px !important;
+color: #38424D !important;
+}
+.child-list{
+    list-style: disc !important;
+}
+.child-list li:last-child{
+list-style: none;
+}
+.child-italic{
+  padding: 0px 89px;
+}
+.child-italic h5{
+  font-style: italic !important;
+font-weight: 600 !important;
+font-size: 16px !important;
+line-height: 26px !important;
+color: #38424D !important;
+padding-bottom: 0px !important;
+padding-top: 20px !important ;
+}
+.child-italic p{
+  font-style: italic !important;
+  padding-bottom: 10px !important;
+}
+.bottom-pg{
+  font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+color: #38424D;
+padding:0px 89px 100px 89px !important;
+
+}
+
+@media only screen and (max-width: 600px) {
+
+.heading-term p {
+padding: 0px !important ;
+
+}
+.terms-list ul{
+  padding: 0px !important;
+}
+.contracT{
+  padding: 0px !important;
+  text-align: center;
+}
+.terms-contract ul{
+  padding: 0px !important;
+}
+.child-italic{
+  padding: 0px !important;
+}
+}

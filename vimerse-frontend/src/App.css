@@ -1,0 +1,89 @@
+.main-container{
+  padding: 80px 100px !important;
+}
+.main-container .row:first-child{
+  border-radius: 16px;
+  box-shadow: 2px 5px 20px rgba(191, 191, 191, 0.25);
+}
+.main-container .row:nth-child(2){
+  padding: 12px 0px !important;
+}
+.main-container .row:nth-child(3){
+margin-top: 80px !important;
+}
+.form  p{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+display: flex;
+align-items: center;
+color: #9DA4A9;
+}
+.form  p span{
+  text-align: end;
+}
+.App{
+padding: 45px 35px !important;
+}
+.f-content{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #434F56 !important;
+  padding: 15px 34px !important;
+}
+
+.App h2 {
+  text-align: center;
+}
+
+.form Label{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #121213;
+  display: flex !important;
+  margin: 0px !important;
+}
+.App hr {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #6789AC;
+  border: none;
+  border-top: 1px double #333;
+  overflow: visible;
+}
+.btnClass {
+  border-radius: 30px !important ;
+  font-weight: bold !important;
+  padding: 12px 70px !important;
+}
+.btn-orange {
+  background-color: #fe7a39 !important;
+  border: 1px solid #fe7a39 !important;
+}
+hr:after {
+  background: #fff;
+  content: "Or sign in with email";
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+.badge {
+  background-color: #fff2eb !important;
+  border: #fff2eb !important;
+  border-radius:100px !important;
+  padding: 10px 40px !important;
+  color: #FE7A39 !important;
+}

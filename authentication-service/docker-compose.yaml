@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  auth_mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  auth:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      MONGO_URI: mongodb://auth_mongo:27017/auth
