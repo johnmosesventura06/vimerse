@@ -16,6 +16,10 @@
 .header-item a:hover {
   color: #176ea5 !important;
 }
+.header-logo-center {
+  display: block;
+  margin: auto;
+}
 .header-btn {
   font-weight: 500;
   font-size: 14px;
@@ -38,4 +42,36 @@
 /*  Responsive-NavBar */
 .mobile-responsive {
   background: #ffffff;
+}
+
+.header2 .header-item ul{
+  list-style: none;
+}
+.header2 .header-item ul li{
+  font-size: 14px;
+  display: flex;
+  vertical-align: middle;
+  line-height: 15px;
+  align-items: end;
+}
+.header2 .header-item ul li p {
+  margin: 0;
+  color: #434f56;
+  font-weight: 500;
+}
+.header2 .header-item ul li span{
+  text-align: right;
+}
+.header2 .header-item ul li a{
+  color: orange !important;
+  padding: 0;
+  font-size: 10px;
+  font-weight: bold;
+}
+.header2 .header-item p.icon{
+  border-radius: 50%;
+  background: #434f56;
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
 }

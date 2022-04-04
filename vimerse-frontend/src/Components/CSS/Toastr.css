@@ -1,0 +1,11 @@
+.toastContainer .toast {
+    display: flex !important
+}
+.toastContainer .toast .content {
+    position: relative;
+    top: auto;
+    background: none;
+    color: #f1f1f1;
+    width: auto;
+    height: auto;
+}

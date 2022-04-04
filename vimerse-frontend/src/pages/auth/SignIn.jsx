@@ -20,6 +20,8 @@ import {login} from "../../redux/action"
 // import {useSelector,useDispatch} from "react-redux";
 import "../../Components/CSS/SignUp.css";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toast';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
   const [inputtext, setinputtext] = useState({
@@ -27,11 +29,15 @@ const SignIn = () => {
     password: "",
   });
 
+  let toastrMessage = '';
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setlastName] = useState("");
+  const showSuccess = () => toast.success(toastrMessage);
+  const showError = () => toast.error(toastrMessage);
 
+  const navigate = useNavigate();
   console.log(inputtext);
   const [eye, seteye] = useState(true);
   
@@ -46,39 +52,72 @@ const SignIn = () => {
     }
   };
   const submitForm = async () =>{
-   
-      const data = await axios.post(`http://localhost:3002/login`,
-                {
-                  email: email,
-                  password: password,
-                }
-                // {
-                //   headers: {
-                //     // this header is required,
-                //     // this is the only security the
-                //     // endpoint has
-                //     // POST /auth/token MUST NOT be called
-                //     // in a client app
-                //     'x-api-key': process.env.API_KEY
-                //   },
-                // }
-              ).catch(function (error) {
-                if (error.response) {
-                  // Request made and server responded
-                  console.log(error.response.data);
-                  console.log(error.response.status);
-                  console.log(error.response.headers);
-                } else if (error.request) {
-                  // The request was made but no response was received
-                  console.log(error.request);
-                } else {
-                  // Something happened in setting up the request that triggered an Error
-                  console.log('Error', error.message);
-                };
-             
-              });
+    if (email && password){
+        const data = await axios.post(`http://localhost:3002/login`,
+        {
+          email: email,
+          password: password,
+        }
+        // {
+        //   headers: {
+        //     // this header is required,
+        //     // this is the only security the
+        //     // endpoint has
+        //     // POST /auth/token MUST NOT be called
+        //     // in a client app
+        //     'x-api-key': process.env.API_KEY
+        //   },
+        // }
+      ).catch(function (error) {
+        if (error.response) {
+          var errorMessage = error.response.data;
+          toastrMessage = errorMessage.error;
+          console.log('toastrMessage', toastrMessage)
+          showError();
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', error.message);
+        };
+    
+      });
               
-        console.log(data)
+      console.log(data)
+      if(data.status == 200){
+           var usertype = data.data.user.usertype;
+           var firstname = data.data.user.firstname;
+           var lastname = data.data.user.lastname;
+
+           localStorage.setItem("usertype", usertype);
+           localStorage.setItem("firstname", firstname);
+           localStorage.setItem("lastname", lastname);
+
+
+           if (usertype = "client"){
+            toastrMessage = "Successfully Login!"; 
+            showSuccess();
+            setTimeout(
+              function() {
+                navigate('/dashboard');
+              }
+              .bind(this),
+              2000
+            );
+           }
+           else{
+            toastrMessage = "Admin Page Under Construction!!!"; 
+            showError();
+           }
+             
+      }  
+    }
+    else{
+      toastrMessage = "Fill up all fields";
+      showError();
+    }
+      
   }
   // const dispatch= useDispatch()
   
@@ -133,7 +172,7 @@ const SignIn = () => {
                   </Col>
                   <Col md={10} xs={10} className="mp">
                     <Input
-                      type={password}
+                      type="password"
                       name="password"
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Password"
@@ -187,6 +226,7 @@ const SignIn = () => {
           />
         </Col>
       </Row>
+      <ToastContainer position="top-right" delay={3000}/>
     </Container>
   );
 };

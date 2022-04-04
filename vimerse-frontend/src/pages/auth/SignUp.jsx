@@ -17,27 +17,35 @@ import Eye from "../../images/eye.svg";
 import Eye2 from "../../images/eye2.svg";
 import People from "../../images/people.svg";
 import "../../Components/CSS/SignUp.css";
+import "../../Components/CSS/Toastr.css";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toast';
+import { useNavigate } from 'react-router-dom';
+
 const SignUp = () => {
   const [inputtext, setinputtext] = useState({
     email: "",
     password: "",
     lastname: "",
-    firstname: ""
+    firstname: "",
   });
-
+  let toastrMessage = '';
+  var hasPasswordError = true, hasEmailError = true;
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
+  const [cpassword, setCPassword] = useState("");
   const [email, setEmail] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setlastName] = useState("");
+  const showSuccess = () => toast.success(toastrMessage);
+  const showError = () => toast.error(toastrMessage);
 
-  console.log(inputtext);
   const [eye, seteye] = useState(true);
   
   const submitForm = async ()  => {
-    console.log('test');
-    
-    const data = await axios.post(`http://localhost:3002/users`,
+    if (lastname && firstname && email && password && cpassword && !hasPasswordError && !hasEmailError){
+
+      const data = await axios.post(`http://localhost:3002/users`,
               {
                 email: email,
                 password: password,
@@ -55,34 +63,93 @@ const SignUp = () => {
               //     'x-api-key': process.env.API_KEY
               //   },
               // }
-            ).catch(function (error) {
+            )
+            
+            .catch(function (error) {
               if (error.response) {
                 // Request made and server responded
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
+                var errorMessage = error.response.data;
+                toastrMessage = errorMessage.error;
+                console.log('toastrMessage', toastrMessage)
+                showError();
               } else if (error.request) {
                 // The request was made but no response was received
                 console.log(error.request);
               } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log('Error', error.message);
+                toastrMessage = error.message;
+                showError();
               };
            
             });
 
+          if(data.status == 200){
+                
+                toastrMessage = "Successfully Register!"; 
+                showSuccess();
+                setTimeout(
+                  function() {
+                    navigate('/signin');
+                  }
+                  .bind(this),
+                  2000
+              );
+          }  
          console.log(data)
+
+    }
+    else{
+      if (!lastname || !firstname || !email || !password || !cpassword){
+        toastrMessage = "Fill up all fields";
+        showError();
+      }
+      setConfirmpassword();
+      validateEmail();
+    }
     
   }
   const setType = () => {
     if (eye) {
       seteye(false);
-      //setpassword("text");
+      // setpasswordtype("text");
     } else {
       seteye(true);
-      //setpassword("password");
+      // setpasswordtype("password"); 
     }
   };
+
+
+  const setConfirmpassword = () => {
+   if (cpassword !== "undefined" && typeof password !== "undefined") {
+     if (!(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/).test(password)){
+      hasPasswordError = true;
+      toastrMessage = "Password must include 1 uppercase, 1 lowercase and 1 number, minimum 9 characters";
+      showError();
+     }
+     else{
+      if (cpassword != password) {
+        hasPasswordError = true;
+        toastrMessage = "Passwords don't match.";
+        showError();
+       }
+       else{
+        hasPasswordError = false;
+       }
+     }
+    
+   }
+  };
+  
+  const validateEmail = () => {
+    if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email))) {
+      hasEmailError = true;
+      toastrMessage = "Please enter a valid email address";
+      showError();
+    }
+    else{
+      hasEmailError = false;
+    }
+  }
+
   return (
     <Container className="main-container">
       <Row className="main-container-row">
@@ -146,15 +213,8 @@ const SignUp = () => {
                       id="exampleEmail"
                       placeholder="Email"
                       onChange={(e) => setEmail(e.target.value)}
+                      onBlur={(e) => validateEmail(e.target.value)}
                     />
-                  </Col>
-                </Row>
-                <Row className="hl-text pd-0">
-                  <Col md={9} xs={9} lg={9} className="mp">
-                    <p className="mb-0">Please enter a valid email address</p>
-                  </Col>
-                  <Col md={3} xs={3} lg={3}>
-                    <span className="mb-0">{inputtext.email?.length || 0} / 255</span>
                   </Col>
                 </Row>
               </FormGroup>
@@ -166,12 +226,13 @@ const SignUp = () => {
                   </Col>
                   <Col md={10} xs={10} className="mp">
                     <Input
-                      type={password}
+                      type="password"
                       name="password"
-                      id="examplePassword"
+                      id="password"
                       placeholder="Password"
                       className="b-right"
                       onChange={(e) => setPassword(e.target.value)}
+                      onBlur={(e) => setConfirmpassword(e)}
                     />
                   </Col>
                   <Col md={1} xs={1} className="mp eye">
@@ -186,17 +247,6 @@ const SignUp = () => {
                     )}
                   </Col>
                 </Row>
-                <Row className="hl-text pd-0">
-                  <Col md={9} xs={9} lg={9} className="mp">
-                    <p className="mb-0">
-                      Must include 1 uppercase, 1 lowercase and 1 number,
-                      minimum 8 characters
-                    </p>
-                  </Col>
-                  <Col md={3} xs={3} lg={3}>
-                    <span className="mb-0">{inputtext.password?.length || 0}/ 128</span>
-                  </Col>
-                </Row>
               </FormGroup>
               <FormGroup>
                 <Row>
@@ -206,14 +256,13 @@ const SignUp = () => {
                   </Col>
                   <Col md={10} xs={10} className="mp">
                     <Input
-                      type={password}
+                      type="password"
                       name="confirmpassword"
                       id="confirmpassword"
                       placeholder="Confirm Password"
                       className="b-right"
-                      onChange={(e) =>
-                        setinputtext({ inputtext, confirmpassword: e.target.value })
-                      }
+                      onChange={(e) => setCPassword(e.target.value)}
+                      onBlur={(e) => setConfirmpassword(e)}
                     />
                   </Col>
                   <Col md={1} xs={1} className="mp eye">
@@ -255,6 +304,10 @@ const SignUp = () => {
           />
         </Col>
       </Row>
+
+      {/* <ToastContainer delay={3000}  /> */}
+      <ToastContainer position="top-right" delay={3000}/>
+
     </Container>
   );
 };

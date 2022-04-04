@@ -1,0 +1,9 @@
+.dashboard-component {
+  min-height: 80vh;
+  padding: 80px 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+.text-orange{
+  color: orange;
+}

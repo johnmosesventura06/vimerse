@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import PrivateRoute from './pages/auth/PrivateRoute'
 import './index.css';
 import Home from './Components/Home';
+import Dashboard from './Components/Dashboard';
 import AboutUs from './Components/AboutUs';
 import Article from './Components/Articles';
 import Terms from './Components/TermsConditions';
@@ -14,6 +16,7 @@ import SignUp from './pages/auth/SignUp'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DevHome from "./Components/developersPages/Home"
 import store from './redux/store';
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -27,6 +30,8 @@ ReactDOM.render(
     <Route exact path="/termsConditions" element={<Terms/>} />
     <Route exact path="/article" element={<Article />} />
     <Route exact path="/DevHome" element={<DevHome />} />
+    <Route exact path="/dashboard" element={<Dashboard />} />
+    
     </Routes>
     </Router> 
     {/* <Provider store={store} >
